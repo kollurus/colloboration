@@ -1,4 +1,4 @@
- <%--  <style>
+ <%--   <style>
 .modal-header, h4, .close {
 	background-color: #ECBC0C;
 	color: white !important;

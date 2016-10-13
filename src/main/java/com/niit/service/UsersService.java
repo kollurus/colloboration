@@ -15,4 +15,3 @@ public interface UsersService {
 	
 	public User viewUser(HttpSession session);
 }
-

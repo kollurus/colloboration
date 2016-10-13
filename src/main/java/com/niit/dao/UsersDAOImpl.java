@@ -36,6 +36,7 @@ public class UsersDAOImpl implements UsersDAO {
 		User user=(User)c.uniqueResult();
 		return user;
 	}
+
 	@Transactional
 	public User viewUser(int userid) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);

@@ -1,7 +1,6 @@
  package com.niit.controllers;
 
 import java.io.IOException;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +18,19 @@ import com.niit.models.User;
 import com.niit.service.UsersService;
 
 @RestController
-public class UsersRestController {
+public class RC_Users {
 	
 	@Autowired
 	private UsersService usersService;
+	
 	@Autowired
 	private UsersDAO usersDAO;
-	
 	
 	@PostMapping("/PostService")
 	public void PostService(@RequestBody User user) {
 		usersService.UserRegistration(user);
 	}
+	
 	@PostMapping("/imageUpload")
 	public void ImageUpload(@RequestBody MultipartFile file,HttpSession session) throws IOException {
 		

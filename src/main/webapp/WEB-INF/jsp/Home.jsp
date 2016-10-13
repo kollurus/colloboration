@@ -48,15 +48,14 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-			<sec:authorize access="hasRole('ROLE_USER')"> 
-				<div class="container">
+			<sec:authorize access="isAuthenticated()"> 
+				<div class="container-fluid">
 					<c:import url="/WEB-INF/jsp/Body.jsp">
 					</c:import>
 				</div>
 		 	</sec:authorize>
 			</c:otherwise>
-		
- 	</c:choose>
+		</c:choose>
 	</div>
 	<%-- <div class="container">
 		<h2>BootStrap Tabs</h2>
@@ -91,13 +90,13 @@
 
 	<Footer><%@include file="/WEB-INF/includes/Foot.jsp"%></Footer>
 
-	 <!--  <script type="text/javascript">
+	   <script type="text/javascript">
 		$(document).ready(function() {
 			if (window.location.href.indexOf('#login') != -1) {
 				$('#login').modal('show');
 			}
 		});
-	</script> -->
+	</script>   
 
 
 

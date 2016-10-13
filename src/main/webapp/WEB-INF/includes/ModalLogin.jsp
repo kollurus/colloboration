@@ -48,10 +48,10 @@
 		</div>
 	</div>
 </div>
-<%-- <script>
+ <script>
 	$(document).ready(function() {
 		$("#log").click(function() {
 			$("#login").modal();
 			});
 		});
-</script> --%> 
+</script> 
