@@ -48,7 +48,7 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-			<sec:authorize access="isAuthenticated()"> 
+			<sec:authorize access="hasRole('ROLE_USER')"> 
 				<div class="container-fluid">
 					<c:import url="/WEB-INF/jsp/Body.jsp">
 					</c:import>
