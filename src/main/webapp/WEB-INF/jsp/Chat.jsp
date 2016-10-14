@@ -1,7 +1,8 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
 <link href="resources/css/demo.css" rel="stylesheet" type="text/css" />
 <body data-ng-app="chatApp">
-	<div data-ng-controller="ChatCtrl" class="container">
+
+	<div data-ng-controller="ChatCtrl" class="container"><h3>we are happy to hear from you..</h3>
 		<form data-ng-submit="addMessage()" name="messageForm">
 			<input type="text" placeholder="Compose a new message..." data-ng-model="message" />
 			<div class="info">

@@ -1,13 +1,19 @@
 package com.niit.controllers;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.models.Message;
+import com.niit.models.OutputMessage;
 import com.niit.service.BlogService;
 import com.niit.service.ForumService;
 import com.niit.service.UsersService;
@@ -71,10 +77,15 @@ public class Navigation {
 	}
 	
 	@RequestMapping("chat")
-	public String Chat(Model m)
-	{
+	public String Chat(Model m) {
 		m.addAttribute("ChatClicked", "true");
 		return "Home";
+	}
+
+	@MessageMapping("/chat")
+	@SendTo("/topic/message")
+	public OutputMessage sendMessage(Message message) {
+		return new OutputMessage(message, new Date());
 	}
 }
   
